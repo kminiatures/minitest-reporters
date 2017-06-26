@@ -20,7 +20,7 @@ module Minitest
     end
 
     def pad_test(str)
-      pad("%-#{TEST_SIZE}s" % str, TEST_PADDING)
+      pad str.ljust(TEST_SIZE - str.scan(/[^a-zA-Z_]/).count), TEST_PADDING
     end
   end
 end
